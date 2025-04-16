@@ -4,12 +4,15 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_teddynote.prompts import load_prompt
-from dotenv import load_dotenv
 from langchain import hub
 from PIL import Image
 
 
-load_dotenv()
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+LANGSMITH_TRACING = st.secrets["LANGSMITH_TRACING"]
+LANGSMITH_ENDPOINT= st.secrets["LANGSMITH_ENDPOINT"]
+LANGSMITH_API_KEY= st.secrets["LANGSMITH_API_KEY"]
+LANGSMITH_PROJECT= st.secrets["LANGSMITH_PROJECT"]
 
 image = Image.open("images/dorian_01.png")
 st.image(image, width=150)
